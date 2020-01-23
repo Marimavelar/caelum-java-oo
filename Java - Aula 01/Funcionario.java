@@ -1,16 +1,26 @@
 class Funcionario{
+    private int id;
     private String nomeFuncionario;
-    private double salario; // Não podemos acessar diretamente essa variável fora dessa "classe"
+    private double salario; // Não podemos acessar diretamente essa variável fora dessa "classe" por conta do private
+    private double comissao;
+    private static double premio; // variável da classe
+    private static int quantidadeFuncionarios;
 
+    // constructor's
     Funcionario(String nome){
+        this();
         this.setNomeFuncionario(nome);
     }
     Funcionario(String nome, double valor){
         this(nome);
         this.setSalario(valor);
     }
-    Funcionario(){}
+    Funcionario(){
+        this.setId(quantidadeFuncionarios);
+        quantidadeFuncionarios++;
+    }
 
+    // methods
     public void setNomeFuncionario(String nomeFuncionario){
         this.nomeFuncionario = nomeFuncionario;
     }
@@ -28,7 +38,32 @@ class Funcionario{
         }
     }
 
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
     public double getSalario(){
         return this.salario;
     }
+
+    public void setComissao(double comissao){
+        this.comissao = comissao;
+    }
+
+    public double getComissao(){
+        return this.comissao;
+    }
+
+    public static void setPremio(double premio){
+        Funcionario.premio = premio;
+    }
+
+    public static double getPremio(){
+        return Funcionario.premio;
+    }
+    
 }
