@@ -6,9 +6,10 @@ class Funcionario{
         this.setNomeFuncionario(nome);
     }
     Funcionario(String nome, double valor){
-        this.setNomeFuncionario(nome);
+        this(nome);
         this.setSalario(valor);
     }
+    Funcionario(){}
 
     public void setNomeFuncionario(String nomeFuncionario){
         this.nomeFuncionario = nomeFuncionario;

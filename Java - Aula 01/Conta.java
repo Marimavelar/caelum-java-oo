@@ -4,14 +4,12 @@ class Conta {
     private int numero;
     private double saldo; 
     private Data dataDeAbertura;
-
-    public Conta(){
-
-    }
     
     public Conta(String nomeTitular){
         setNomeTitular(nomeTitular);
     }
+    
+    public Conta(){}
 
     public void setNomeTitular(String nomeTitular){
         this.nomeTitular = nomeTitular;
