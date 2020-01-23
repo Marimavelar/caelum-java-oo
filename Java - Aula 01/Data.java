@@ -1,9 +1,33 @@
 class Data{
-    int dia;
-    int mes;
-    int ano;
+    private int dia;
+    private int mes;
+    private int ano;
 
-    String formatada(){
-        return this.dia + "/" + this.mes + '/' + this.ano;
+    public void setDia(int dia){
+        this.dia = dia;
+    }
+
+    public int getDia(){
+        return this.dia;
+    }
+
+    public void setMes(int mes){
+        this.mes = mes;
+    }
+
+    public int getMes(){
+        return this.mes;
+    }
+
+    public void setAno(int ano){
+        this.ano = ano;
+    }
+
+    public int getAno(){
+        return this.ano;
+    }
+
+    String setFormat(){
+        return getDia() + "/" + getMes() + '/' + getAno();
     }
 }

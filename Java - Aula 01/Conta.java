@@ -1,32 +1,76 @@
 class Conta {
-    String nomeTitular;
-    String agencia;
-    int numero;
-    double saldo; 
-    Data dataDeAbertura;
+    private String nomeTitular;
+    private String agencia;
+    private int numero;
+    private double saldo; 
+    private Data dataDeAbertura;
 
-    void deposita(double valor){
+    public Conta(){
+
+    }
+    
+    public Conta(String nomeTitular){
+        setNomeTitular(nomeTitular);
+    }
+
+    public void setNomeTitular(String nomeTitular){
+        this.nomeTitular = nomeTitular;
+    }
+
+    public String getNomeTitular(){
+        return this.nomeTitular;
+    }
+
+    public void setAgencia(String agencia){
+        this.agencia = agencia;
+    }
+
+    public String getAgencia(){
+        return this.agencia;
+    }
+
+    public void setNumero(int numero){
+        this.numero = numero;
+    }
+
+    public int getNumero(){
+        return this.numero;
+    }
+
+    public void deposita(double valor){
         this.saldo += valor;
     }
 
-    void saca(double valor){
+    public double getSaldo(){
+        return this.saldo;
+    }
+
+    public void saca(double valor){
         this.saldo -= valor;
     }
 
-    double calculaRendimento(){
-        return saldo * 0.1;
+    public double getRendimento(){
+        return this.saldo * 0.1;
     }
 
-    String retornaDadosDaConta(){
+    public void setDataDeAbertura(Data dataDeAbertura){
+        this.dataDeAbertura = dataDeAbertura;
+    }
+
+    public Data getDataDeAbertura(){
+        return this.dataDeAbertura;
+    }
+
+    public String getDadosDaConta(){
         String dados = "Titular: " + this.nomeTitular;
         dados += "\nAgência: " + this.agencia;
         dados += "\nNúmero: " + this.numero;
         dados += "\nSaldo: " + this.saldo;
-        dados += "\nData de Abertura: " + this.dataDeAbertura.formatada();
+        dados += "\nData de Abertura: " + this.dataDeAbertura.setFormat();
         return dados;
     }
 
-    void transfereValor(double valor, Conta contaDestino){
+    public void transfereValor(double valor, Conta contaDestino){
         if(this.saldo >= valor){
             this.saldo -= valor;
             contaDestino.saldo += valor;   
